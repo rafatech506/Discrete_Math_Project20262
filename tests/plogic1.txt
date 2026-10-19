@@ -1,0 +1,52 @@
+propositional_logic
+10
+(p)∧(s)
+(p)∧(s)
+2 0 1
+False
+False True True False False
+((s)↔(r))↔(t)
+((s)↔(r))↔(t)
+3 0 2
+False
+False False True False True
+p
+p
+1 0 0
+False
+False True False False True
+(((s)→(p))→((p)∧(t)))	⊕(p)
+(((s)→(p))→((p)∧(t)))⊕(p)
+5 0 4
+False
+False True False False False
+r
+r
+1 0 0
+True
+False True True False True
+(¬((r)	∧(q)))↔(q)
+(¬((r)∧(q)))↔(q)
+3 1 2
+True
+True False True True False
+(p)∧(p)
+(p)∧(p)
+2 0 1
+True
+True False False True True
+(r)→(t)
+(r)→(t)
+2 0 1
+True
+False False True True True
+((((q)⊕((q) ↔(q)))⊕(q))∧(p))⊕(t)
+((((q)⊕((q)↔(q)))⊕(q))∧(p))⊕(t)
+6 0 5
+True
+False False True False False
+(q)→(p)
+(q)→(p)
+2 0 1
+True
+True False False True False
