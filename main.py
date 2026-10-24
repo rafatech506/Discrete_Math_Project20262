@@ -25,7 +25,7 @@ A little helper to test your solution. Basically reads a file in the structure o
 """
 import sys
 from helpers import *
-from struct import Valuation
+from interface_function import Valuation
 import solution as sol
 
 def main():

@@ -1,52 +1,52 @@
 propositional_logic
 10
-(p)∧(s)
-(p)∧(s)
+(r)∨(q)
+(r)∨(q)
 2 0 1
-False
-False True True False False
-((s)↔(r))↔(t)
-((s)↔(r))↔(t)
-3 0 2
-False
-False False True False True
-p
-p
-1 0 0
-False
-False True False False True
-(((s)→(p))→((p)∧(t)))	⊕(p)
-(((s)→(p))→((p)∧(t)))⊕(p)
-5 0 4
-False
-False True False False False
-r
-r
-1 0 0
 True
 False True True False True
-(¬((r)	∧(q)))↔(q)
-(¬((r)∧(q)))↔(q)
-3 1 2
-True
-True False True True False
-(p)∧(p)
-(p)∧(p)
-2 0 1
-True
-True False False True True
-(r)→(t)
-(r)→(t)
-2 0 1
-True
-False False True True True
-((((q)⊕((q) ↔(q)))⊕(q))∧(p))⊕(t)
-((((q)⊕((q)↔(q)))⊕(q))∧(p))⊕(t)
+((s)∨(	(p)→(s)))→(((s)↔(p))→(t))
+((s)∨((p)→(s)))→(((s)↔(p))→(t))
 6 0 5
 True
-False False True False False
-(q)→(p)
-(q)→(p)
+True False False True True
+t
+t
+1 0 0
+False
+True True True True False
+(((q)∧ (t))∧((p)↔(p)))↔(q)
+(((q)∧(t))∧((p)↔(p)))↔(q)
+5 0 4
+True
+True False False True True
+q
+q
+1 0 0
+False
+False False False True False
+(r)↔(q)
+(r)↔(q)
 2 0 1
 True
-True False False True False
+True True True True False
+(s)∧(((r)∧(q	))∨(((p)∨(q))→(t)))
+(s)∧(((r)∧(q))∨(((p)∨(q))→(t)))
+6 0 5
+True
+False True False True True
+(s)⊕(r)
+(s)⊕(r)
+2 0 1
+True
+True True False True True
+(((s)∧(s))↔(r))∨((¬(q	))∧(q))
+(((s)∧(s))↔(r))∨((¬(q))∧(q))
+5 1 4
+True
+False True True True True
+( ((p)⊕(t))∧(r))∨(t)
+(((p)⊕(t))∧(r))∨(t)
+4 0 3
+True
+True False True False True

@@ -11,13 +11,16 @@ class Valuation:
 class Formula(ABC):
 	@abstractmethod
 	def __str__(self)->str:
+		#str(v) = v
+		#str(∘φ) = ∘ + "(" + str(φ) + ")"
+		#str(φ□β) = "(" + str(φ) + ")" + □ + "(" + str(β) + ")"
 		pass
 	@abstractmethod
 	def eval(self,val:Valuation):
-		#Evaluates the formula given the mappings in 
+		#Evaluates the formula given the mappings in 'val'
 		pass
 	@abstractmethod
-	def count(self)->map[str,int]:
+	def count(self)->dict[str,int]:
 		#Counts the amount of variables, unary operators and binary operators
 		## the answer 'ans' is organized as:
 		##        * ans['var']:amount of variables
