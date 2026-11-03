@@ -24,6 +24,7 @@ A little helper to test your solution. Basically reads a file in the structure o
 
 """
 import sys
+sys.setrecursionlimit(10**7)
 from helpers import *
 from interface_function import Valuation
 import solution as sol
