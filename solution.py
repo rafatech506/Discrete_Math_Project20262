@@ -1,5 +1,5 @@
 """Author: YOU
-For you to define however you want the interface in struct.py
+For you to define however you want the interface in interface_function.py
 """
 from interface_function import *
 from helpers import Blank_Spaces
