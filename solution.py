@@ -1,7 +1,6 @@
 import sys
 from helpers import Blank_Spaces
 
-# Forzar la reconfiguracion a UTF-8 en la entrada/salida si se ejecuta en Windows
 if hasattr(sys.stdin, 'reconfigure'):
     try:
         sys.stdin.reconfigure(encoding='utf-8')
@@ -37,16 +36,17 @@ class Variable(Formula):
         return res
 
     def eval(self, valuation):
-        if hasattr(valuation, 'variables'):
-            res = valuation.variables[self.name]
+        # AQUI ESTA LA CORRECCION: Se usa 'variable' en singular
+        if hasattr(valuation, 'variable'):
+            res = valuation.variable[self.name]
         elif hasattr(valuation, 'get'):
             res = valuation[self.name]
         else:
-            res = valuation.variables[self.name]
+            res = valuation.variable[self.name]
         return res
 
     def count(self) -> dict:
-        res = {self.name: 1}
+        res = {'var': 1, 'uni': 0, 'bin': 0}
         return res
 
 
@@ -73,11 +73,12 @@ class UnaryFormula(Formula):
         return res
 
     def count(self) -> dict:
-        res = dict(self.child.count())
-        if self.op in res:
-            res[self.op] = res[self.op] + 1
-        else:
-            res[self.op] = 1
+        c = self.child.count()
+        res = {
+            'var': c['var'],
+            'uni': c['uni'] + 1,
+            'bin': c['bin']
+        }
         return res
 
 
@@ -105,32 +106,22 @@ class BinaryFormula(Formula):
         return res
 
     def count(self) -> dict:
-        res = dict(self.left.count())
-        right_counts = self.right.count()
-        for key in right_counts:
-            val = right_counts[key]
-            if key in res:
-                res[key] = res[key] + val
-            else:
-                res[key] = val
-
-        if self.op in res:
-            res[self.op] = res[self.op] + 1
-        else:
-            res[self.op] = 1
+        l = self.left.count()
+        r = self.right.count()
+        res = {
+            'var': l['var'] + r['var'],
+            'uni': l['uni'] + r['uni'],
+            'bin': l['bin'] + r['bin'] + 1
+        }
         return res
 
 
 def parse_clean_formula(s: str) -> Formula:
     """
     Parsea recursivamente una cadena sin espacios para construir el árbol.
-    - Fórmula binaria: (left)op(right) [Empieza con '(']
-    - Fórmula unaria: op(inner)        [No empieza con '(', pero contiene '(']
-    - Variable: var                    [No contiene '(']
     """
     res = None
     if s[0] == '(':
-        # 1. Identificar fórmula binaria
         count_paren = 0
         match_idx = -1
         
@@ -158,7 +149,6 @@ def parse_clean_formula(s: str) -> Formula:
         res = BinaryFormula(left_formula, op, right_formula)
 
     else:
-        # 2. Identificar fórmula unaria o variable
         first_open = -1
         for idx3 in range(len(s)):
             if first_open == -1:
@@ -179,8 +169,6 @@ def parse_clean_formula(s: str) -> Formula:
 def expression_tree(s: str) -> Formula:
     """
     Función principal requerida por la interfaz.
-    Elimina los espacios/tabulaciones importados de helpers.py
-    y construye el árbol de expresiones.
     """
     cleaned = ""
     for char in s:
@@ -194,3 +182,4 @@ def expression_tree(s: str) -> Formula:
 
     res = parse_clean_formula(cleaned)
     return res
+
