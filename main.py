@@ -46,6 +46,7 @@ def main():
 			if(name_space=="propositional_logic"):god_in=raw_in[i]=='True'
 			elif(name_space=="set_operators"):god_in=decode_set(int(raw_in[i]))
 			elif(name_space=="arithmetic"):god_in=int(raw_in[i])
+			elif(name_space=="random_space"):god_in=int(raw_in[i])
 			value_variables[i]=god_in
 
 		the_formula=sol.expression_tree(raw_cad)

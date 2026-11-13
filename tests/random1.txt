@@ -1,0 +1,52 @@
+random_space
+10
+(hola(adios)	)op1((op1(adios))adios((adios)adios(hola)))
+(hola(adios))op1((op1(adios))adios((adios)adios(hola)))
+4 2 3
+4435750979
+3763292516 4435750946 7720957496
+hola(casos_extra)
+hola(casos_extra)
+1 1 0
+6960813805
+6407506665 2889239527 6960813772
+hola
+hola
+1 0 0
+6034072247
+6034072247 7415148642 93145748
+(	casos_extra)op1(((adios)op1((hola)adios(hola)))adios((hola)op1(hola)))
+(casos_extra)op1(((adios)op1((hola)adios(hola)))adios((hola)op1(hola)))
+6 0 5
+1915716446
+3632667980 2738887433 1915716446
+hola(hola((casos_extra)op1(	casos_extra)))
+hola(hola((casos_extra)op1(casos_extra)))
+2 2 1
+6095189895
+5296831557 944024817 6095189829
+casos_extra
+casos_extra
+1 0 0
+6744165229
+1920478598 6220511858 6744165229
+(((hola)adios((casos_extra	)adios(adios)))op1(casos_extra))adios(op1(hola))
+(((hola)adios((casos_extra)adios(adios)))op1(casos_extra))adios(op1(hola))
+5 1 4
+10779229220
+4035830558 4156027218 1448459115
+(( ((casos_extra)op1(adios))op1(hola))adios((hola)adios(casos_extra)))op1(casos_extra)
+((((casos_extra)op1(adios))op1(hola))adios((hola)adios(casos_extra)))op1(casos_extra)
+6 0 5
+2092370635
+1382357109 2971651354 503076390
+(casos_extra)op1((adios)op1(hola))
+(casos_extra)op1((adios)op1(hola))
+3 0 2
+7982204639
+7982204639 3685494171 3034051869
+(casos_extra)op1((hola)adios((hola)op1(	(adios)op1(casos_extra))))
+(casos_extra)op1((hola)adios((hola)op1((adios)op1(casos_extra))))
+5 0 4
+5784554476
+2914744428 1108613212 5784554476
