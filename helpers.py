@@ -31,4 +31,9 @@ The_spaces={
 		{'-':lambda x:-x},
 		{'+':lambda x,y:x+y,'*':lambda x,y:x*y,'-':lambda x,y:x-y}
 		),
+	"random_space":(
+		["hola","adios","casos_extra"],
+		{"op1":lambda x:~x,"hola":lambda x:x+33},
+		{"op1":lambda x,y:max(x,y),"adios":lambda x,y:x-y}
+		),
 }
